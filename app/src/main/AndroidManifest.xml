@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.snapchatclone">
-    
-    <uses-permission android:name="android.permission.CAMERA "/>
 
-    <uses-feature android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-feature android:name="android.hardware.camera2.full"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SnapchatClone">
+        <activity
+            android:name=".CameraJob"
+            android:exported="false"
+            android:label="@string/title_activity_camera2"
+            android:theme="@style/Theme.SnapchatClone.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

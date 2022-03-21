@@ -11,12 +11,12 @@ public class ViewPageAdapter extends FragmentStateAdapter {
     }
     @NonNull
     @Override
-    public Fragment createFragment(int position) {
+    public Fragment createFragment (int position) {
         switch(position){
             case 0:
                 return new chatFragment();
             case 1:
-                return new CameraFragment();
+                return new TEST();
             case 2:
                 return new StoryFragment();
         }

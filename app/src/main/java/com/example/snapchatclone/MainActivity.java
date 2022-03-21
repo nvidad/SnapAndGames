@@ -3,7 +3,10 @@ package com.example.snapchatclone;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+import androidx.fragment.app.FragmentTransaction;
+import android.app.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -15,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         //crate and get elements
 
         //TabLayout tabLayout=findViewById(R.id.tabs);
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager2 viewPager2;
         viewPager2= findViewById(R.id.viewPager2);
+        //before need create a layout for games and leading board
         ViewPageAdapter adapter= new ViewPageAdapter(this);
         viewPager2.setAdapter(adapter);
         //below make tabs move tab1,tab2,tab3
