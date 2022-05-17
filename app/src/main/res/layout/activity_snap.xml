@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SnapActivity">
+
+    <Button
+        android:id="@+id/snapButton"
+        android:layout_width="150dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="85dp"
+        android:onClick="SNAPCHATClicked"
+        android:text="SNAPCHAT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/memoryGameButton"
+        android:layout_width="150dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="35dp"
+        android:onClick="memoryGameClicked"
+        android:text="@string/chat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snapButton" />
+
+    <Button
+        android:id="@+id/brainGameButton"
+        android:layout_width="150dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="35dp"
+        android:onClick="brainGameClicked"
+        android:text="BrainGame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/memoryGameButton" />
+
+    <Button
+        android:id="@+id/leaderBoardButton"
+        android:layout_width="150dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="35dp"
+        android:text="LeaderBoard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brainGameButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

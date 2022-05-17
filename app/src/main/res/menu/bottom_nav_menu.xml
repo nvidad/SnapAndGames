@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/map_bottom_nav_selector"
+        android:title="map"
+        android:menuCategory="secondary"
+        />
+
+    <item
+        android:id="@+id/chatFragment"
+        android:icon="@drawable/chat_bottom_nav_selector"
+        android:title="chat"
+        android:menuCategory="secondary"
+        />
+
+    <item
+        android:id="@+id/cameraFragment"
+        android:icon="@drawable/camera_bottom_nav_selector"
+        android:title="camera"
+        android:menuCategory="secondary"
+        />
+
+<!--    <item-->
+<!--        android:id="@+id/storiesFragment"-->
+<!--        android:icon="@drawable/stories_bottom_nav_selector"-->
+<!--        android:title="stories"-->
+<!--        android:menuCategory="secondary"-->
+<!--        />-->
+
+    <item
+        android:id="@+id/brainGameActivity"
+        android:icon="@drawable/stories_bottom_nav_selector"
+        android:title="brainGame"
+        android:menuCategory="secondary"
+        />
+
+    <item
+        android:id="@+id/memoryGameFragment"
+        android:icon="@drawable/stories_bottom_nav_selector"
+        android:title="memoryGame"
+        android:menuCategory="secondary"
+        />
+
+<!--    <item-->
+<!--        android:id="@+id/discoverFragment"-->
+<!--        android:icon="@drawable/discover_bottom_nav_selector"-->
+<!--        android:title="discover"-->
+<!--        android:menuCategory="secondary" />-->
+
+</menu>

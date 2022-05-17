@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/cameraFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.login.ui.fragments.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.login.ui.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.login.ui.fragments.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" />
+<!--    <fragment-->
+<!--        android:id="@+id/storiesFragment"-->
+<!--        android:name="com.example.login.ui.fragments.StoriesFragment"-->
+<!--        android:label="fragment_stories"-->
+<!--        tools:layout="@layout/fragment_stories" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_storiesFragment_to_viewStoriesFragment"-->
+<!--            app:destination="@id/viewStoriesFragment" />-->
+<!--    </fragment>-->
+    <fragment
+        android:id="@+id/brainGameActivity"
+        android:name="com.example.login.ui.fragments.brainGameActivity"
+        android:label="activity_brain_game"
+        tools:layout="@layout/activity_brain_game" />
+    <fragment
+        android:id="@+id/memoryGameFragment"
+        android:name="com.example.login.ui.fragments.MemoryGameFragment"
+        android:label="fragment_memory_game"
+        tools:layout="@layout/fragment_memory_game" />
+<!--    <fragment-->
+<!--        android:id="@+id/discoverFragment"-->
+<!--        android:name="com.example.login.ui.fragments.DiscoverFragment"-->
+<!--        android:label="fragment_discover"-->
+<!--        tools:layout="@layout/fragment_discover" />-->
+<!--    <fragment-->
+<!--        android:id="@+id/viewStoriesFragment"-->
+<!--        android:name="com.example.login.ui.fragments.ViewStoriesFragment"-->
+<!--        android:label="fragment_view_stories"-->
+<!--        tools:layout="@layout/fragment_view_stories" />-->
+</navigation>
