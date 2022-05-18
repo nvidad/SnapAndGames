@@ -30,23 +30,16 @@
 <!--        />-->
 
     <item
-        android:id="@+id/brainGameActivity"
+        android:id="@+id/brainGameFragment"
         android:icon="@drawable/stories_bottom_nav_selector"
         android:title="brainGame"
         android:menuCategory="secondary"
         />
 
     <item
-        android:id="@+id/memoryGameFragment"
-        android:icon="@drawable/stories_bottom_nav_selector"
-        android:title="memoryGame"
-        android:menuCategory="secondary"
-        />
-
-<!--    <item-->
-<!--        android:id="@+id/discoverFragment"-->
-<!--        android:icon="@drawable/discover_bottom_nav_selector"-->
-<!--        android:title="discover"-->
-<!--        android:menuCategory="secondary" />-->
+        android:id="@+id/discoverFragment"
+        android:icon="@drawable/discover_bottom_nav_selector"
+        android:title="discover"
+        android:menuCategory="secondary" />
 
 </menu>

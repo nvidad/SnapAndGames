@@ -27,21 +27,20 @@
         <entry key="..\:/LOGIN/app/src/main/res/layout/item_left.xml" value="0.22135416666666666" />
         <entry key="..\:/LOGIN/app/src/main/res/layout/item_right.xml" value="0.22135416666666666" />
         <entry key="..\:/LOGIN/app/src/main/res/layout/item_user.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/Nico/AndroidStudioProjects/BrainAndMemoryMerged/LOGIN2/app/src/main/res/layout/activity_bottom.xml" value="0.18177083333333333" />
-        <entry key="..\:/Users/Nico/AndroidStudioProjects/BrainAndMemoryMerged/LOGIN2/app/src/main/res/layout/activity_brain_game.xml" value="0.1408514492753623" />
-        <entry key="..\:/Users/Nico/AndroidStudioProjects/BrainAndMemoryMerged/LOGIN2/app/src/main/res/layout/fragment_memory_game.xml" value="0.3523550724637681" />
-        <entry key="..\:/Users/Nico/AndroidStudioProjects/BrainAndMemoryMerged/LOGIN2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18177083333333333" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/drawable/splash_screen.xml" value="0.2065" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/layout/activity_bottom.xml" value="0.13067655236329936" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/layout/activity_brain_game.xml" value="0.1503623188405797" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/layout/fragment_memory_game.xml" value="0.1" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/layout/fragment_stories.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/nezar/AndroidStudioProjects/LOGIN2 - 1/LOGIN2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Nico/AndroidStudioProjects/latest/LOGIN2/app/src/main/res/layout/activity_bottom.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/Nico/AndroidStudioProjects/latest/LOGIN2/app/src/main/res/layout/activity_brain_game.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/Nico/AndroidStudioProjects/latest/LOGIN2/app/src/main/res/layout/fragment_memory_game.xml" value="0.1" />
+        <entry key="..\:/Users/Nico/AndroidStudioProjects/latest/LOGIN2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2861111111111111" />
+        <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_bottom.xml" value="0.1" />
+        <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_chat1.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_login.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_sign_up.xml" value="0.24818840579710144" />
         <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_snap.xml" value="0.2558876811594203" />
+        <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activity_users.xml" value="0.13829787234042554" />
+        <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/activtiy_profile.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/fragment_blank.xml" value="0.2595108695652174" />
         <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/fragment_stories.xml" value="0.2595108695652174" />
+        <entry key="..\:/Users/shush/Desktop/LOGIN2/app/src/main/res/layout/item_user.xml" value="0.22239583333333332" />
       </map>
     </option>
   </component>

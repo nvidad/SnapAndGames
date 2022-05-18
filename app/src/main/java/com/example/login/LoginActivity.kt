@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         if (firebaseUser != null) {
             val intent = Intent(
                 this@LoginActivity,
-                SnapActivity::class.java
+                bottom::class.java
             )
             startActivity(intent)
             finish()
@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                             etPassword.setText("")
                             val intent = Intent(
                                 this@LoginActivity,
-                                SnapActivity::class.java
+                                bottom::class.java
                             )
                             startActivity(intent)
                             finish()

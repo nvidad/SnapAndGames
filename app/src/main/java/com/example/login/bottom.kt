@@ -60,7 +60,7 @@ class bottom: AppCompatActivity() {
 
         binding.bottomNavigation.itemIconTintList = null
 
-//        //if we are viewing stories, hide the bottom navigation
+        //if we are viewing stories, hide the bottom navigation
 //        navController.addOnDestinationChangedListener { _, destination, _ ->
 //            if(destination.id == R.id.viewStoriesFragment) {
 //

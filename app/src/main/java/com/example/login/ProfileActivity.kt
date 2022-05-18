@@ -22,7 +22,7 @@ import com.google.firebase.storage.OnProgressListener
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_users.*
-import kotlinx.android.synthetic.main.activity_users.imgBack
+import kotlinx.android.synthetic.main.activity_users.Back
 import kotlinx.android.synthetic.main.activtiy_profile.*
 import java.io.IOException
 import java.lang.Exception

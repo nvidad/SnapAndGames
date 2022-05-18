@@ -32,7 +32,7 @@ class UsersActivity : AppCompatActivity() {
 
         userRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
-        imgBack.setOnClickListener {
+        Back.setOnClickListener {
             onBackPressed()
         }
 
