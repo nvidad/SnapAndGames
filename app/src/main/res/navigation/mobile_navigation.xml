@@ -37,10 +37,16 @@
         tools:layout="@layout/fragment_brain_game" />
 
     <fragment
-        android:id="@+id/discoverFragment"
-        android:name="com.example.login.ui.fragments.DiscoverFragment"
-        android:label="fragment_discover"
-        tools:layout="@layout/fragment_discover" />
+        android:id="@+id/memoryGameFragment"
+        android:name="com.example.login.ui.fragments.MemoryGameFragment"
+        android:label="fragment_memory_game"
+        tools:layout="@layout/fragment_memory_game" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/discoverFragment"-->
+<!--        android:name="com.example.login.ui.fragments.DiscoverFragment"-->
+<!--        android:label="fragment_discover"-->
+<!--        tools:layout="@layout/fragment_discover" />-->
 <!--    <fragment-->
 <!--        android:id="@+id/viewStoriesFragment"-->
 <!--        android:name="com.example.login.ui.fragments.ViewStoriesFragment"-->

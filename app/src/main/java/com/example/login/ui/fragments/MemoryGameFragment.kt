@@ -1,6 +1,7 @@
 package com.example.login.ui.fragments
 import android.os.*
 import android.view.*
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.login.R
@@ -31,9 +32,10 @@ class MemoryGameFragment : Fragment() {
         val images: MutableList<Int> = mutableListOf(resizedandroid, resizedcplus, resizedjava,resizedjavascript,
             resizedpython, resizedruby, resizedandroid, resizedcplus, resizedjava,resizedjavascript,
             resizedpython, resizedruby)
+
         val buttons = arrayOf(button1, button2, button3, button4, button5, button6, button7,
             button8, button9, button10, button11, button12)
-        val states = BooleanArray(12)
+
         val cardBack = resizedprog
         var clicked=0
         var turnOver = false
@@ -41,6 +43,7 @@ class MemoryGameFragment : Fragment() {
         var lastClicked =-1
 
         images.shuffle()
+
 
         timer = object : CountDownTimer(60000, 1000) {
 
@@ -59,25 +62,26 @@ class MemoryGameFragment : Fragment() {
 
         }.start()
 
-//        for (i in 0..11){
-////            flipped = buttons[i].text !in "cardBack"
-//        }
-        flipped = states.all { it }
-
         for (i in 0..11){
+            flipped = buttons[i].text !in "cardBack"
+        }
+
+
+        for (i in 0..11) {
             buttons[i].text="cardBack"
             buttons[i].textSize=0.0F
             buttons[i].setOnClickListener {
                 if (buttons[i].text == "cardBack" && !turnOver) {
-                    buttons[i].setImageDraw(images[i])
-                    buttons[i].sour
+                    buttons[i].setBackgroundResource(images[i])
                     buttons[i].setText(images[i])
-                    if (clicked == 0) { lastClicked = i }
+                    if (clicked == 0) {
+                        lastClicked = i
+                    }
                     clicked++
                 }
                 else if (buttons[i].text !in "cardBack") {
                     buttons[i].setBackgroundResource(cardBack)
-                    buttons[i].text = "cardBack"
+                    buttons[i].setText("cardBack")
                     clicked--
                 }
 

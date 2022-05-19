@@ -37,9 +37,15 @@
         />
 
     <item
-        android:id="@+id/discoverFragment"
+        android:id="@+id/memoryGameFragment"
         android:icon="@drawable/discover_bottom_nav_selector"
-        android:title="discover"
+        android:title="memoryGame"
         android:menuCategory="secondary" />
+
+<!--    <item-->
+<!--        android:id="@+id/discoverFragment"-->
+<!--        android:icon="@drawable/discover_bottom_nav_selector"-->
+<!--        android:title="discover"-->
+<!--        android:menuCategory="secondary" />-->
 
 </menu>
