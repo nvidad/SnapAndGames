@@ -5,21 +5,21 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/cameraFragment">
 
-    <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.example.login.ui.fragments.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
-    <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.example.login.ui.fragments.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+<!--    <fragment-->
+<!--        android:id="@+id/mapFragment"-->
+<!--        android:name="com.example.login.ui.fragments.MapFragment"-->
+<!--        android:label="fragment_map"-->
+<!--        tools:layout="@layout/fragment_map" />-->
     <fragment
         android:id="@+id/cameraFragment"
         android:name="com.example.login.ui.fragments.CameraFragment"
         android:label="fragment_camera"
         tools:layout="@layout/fragment_camera" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.login.ui.fragments.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 <!--    <fragment-->
 <!--        android:id="@+id/storiesFragment"-->
 <!--        android:name="com.example.login.ui.fragments.StoriesFragment"-->
@@ -41,6 +41,12 @@
         android:name="com.example.login.ui.fragments.MemoryGameFragment"
         android:label="fragment_memory_game"
         tools:layout="@layout/fragment_memory_game" />
+
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="com.example.login.ui.fragments.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_chat" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/discoverFragment"-->

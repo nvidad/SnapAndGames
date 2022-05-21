@@ -49,7 +49,7 @@ class UsersActivity : AppCompatActivity() {
     fun getUsersList() {
         val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
 
-        var userid = firebase.uid
+        val userid = firebase.uid
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userid")
 
 

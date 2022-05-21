@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+<!--    <item-->
+<!--        android:id="@+id/mapFragment"-->
+<!--        android:icon="@drawable/map_bottom_nav_selector"-->
+<!--        android:title="map"-->
+<!--        android:menuCategory="secondary"-->
+<!--        />-->
+
     <item
-        android:id="@+id/mapFragment"
-        android:icon="@drawable/map_bottom_nav_selector"
-        android:title="map"
+        android:id="@+id/cameraFragment"
+        android:icon="@drawable/camera_bottom_nav_selector"
+        android:title="camera"
         android:menuCategory="secondary"
         />
 
@@ -15,12 +22,7 @@
         android:menuCategory="secondary"
         />
 
-    <item
-        android:id="@+id/cameraFragment"
-        android:icon="@drawable/camera_bottom_nav_selector"
-        android:title="camera"
-        android:menuCategory="secondary"
-        />
+
 
 <!--    <item-->
 <!--        android:id="@+id/storiesFragment"-->
@@ -31,15 +33,21 @@
 
     <item
         android:id="@+id/brainGameFragment"
-        android:icon="@drawable/stories_bottom_nav_selector"
+        android:icon="@drawable/brain_game_bottom_nav_selector"
         android:title="brainGame"
         android:menuCategory="secondary"
         />
 
     <item
         android:id="@+id/memoryGameFragment"
-        android:icon="@drawable/discover_bottom_nav_selector"
+        android:icon="@drawable/memory_game_bottom_nav_selector"
         android:title="memoryGame"
+        android:menuCategory="secondary" />
+
+    <item
+        android:id="@+id/leaderboardFragment"
+        android:icon="@drawable/leaderboard_bottom_nav_selector"
+        android:title="leaderboard"
         android:menuCategory="secondary" />
 
 <!--    <item-->

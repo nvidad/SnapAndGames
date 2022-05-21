@@ -40,7 +40,7 @@
                 tools:text="farhan" />
 
             <TextView
-                android:id="@+id/temp"
+                android:id="@+id/userPoints"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gilroy_light"
