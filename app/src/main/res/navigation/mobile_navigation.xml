@@ -46,7 +46,7 @@
         android:id="@+id/leaderboardFragment"
         android:name="com.example.login.ui.fragments.LeaderboardFragment"
         android:label="fragment_leaderboard"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_leaderboard" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/discoverFragment"-->

@@ -1,8 +1,10 @@
 package  com.example.login.ui.fragments
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.login.*
 import com.example.login.R
+import com.example.login.adapter.LeaderboardAdapter
 import com.example.login.adapter.UserAdapter
 import com.example.login.firebase.FirebaseService
+import com.example.login.firebase.FirestoreService
 import com.example.login.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -23,7 +27,7 @@ import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_chat1.imgProfile
 import kotlinx.android.synthetic.main.activity_users.*
-import java.util.ArrayList
+import java.util.*
 
 class LeaderboardFragment : Fragment() {
 
@@ -33,7 +37,7 @@ class LeaderboardFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? { return inflater.inflate(R.layout.activity_users, container, false) }
+    ): View? { return inflater.inflate(R.layout.fragment_leaderboard, container, false) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,17 +49,6 @@ class LeaderboardFragment : Fragment() {
 
         userRecyclerView.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
 
-        Back.setOnClickListener {
-            onDetach()
-        }
-
-        imgProfile.setOnClickListener {
-            val intent = Intent(
-                activity,
-                ProfileActivity::class.java
-            )
-            startActivity(intent)
-        }
         getUsersList()
     }
 
@@ -79,25 +72,24 @@ class LeaderboardFragment : Fragment() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
-                val currentUser = snapshot.getValue(User::class.java)
-                if (currentUser!!.profileImage == ""){
-                    imgProfile.setImageResource(R.drawable.profile_image)
-                }else{
-                    Glide.with(this@LeaderboardFragment).load(currentUser.profileImage).into(imgProfile)
-                }
+
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val user = dataSnapShot.getValue(User::class.java)
 
-                    if (!user!!.userId.equals(firebase.uid)) {
-
+                    if (user != null) {
+//                        user.userPoints = firestoreInstance.getPoints(user.userId)
                         userList.add(user)
                     }
                 }
 
-                val userAdapter = UserAdapter(requireContext(), userList)
 
-                userRecyclerView.adapter = userAdapter
+                userList.sortBy { it.userPoints }
+
+
+                val leaderboardAdapter = LeaderboardAdapter(requireContext(), userList)
+
+                userRecyclerView.adapter = leaderboardAdapter
             }
 
         })

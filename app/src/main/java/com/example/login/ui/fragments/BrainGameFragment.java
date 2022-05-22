@@ -16,8 +16,11 @@ import com.example.login.R;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.example.login.firebase.FirestoreService;
+
 public class BrainGameFragment extends Fragment {
     Button brainGameGoButton;
+    TextView nameBrainGame;
     ArrayList<Integer> answers= new ArrayList<Integer>();//store all the posibble answer
     int locationOfCorrectAnswer;
     TextView resultTextView;
@@ -40,15 +43,21 @@ public class BrainGameFragment extends Fragment {
     }
 
     public void playAgainClicked(View view){
+
+        button0.setVisibility(View.VISIBLE);
+        button1.setVisibility(View.VISIBLE);
+        button2.setVisibility(View.VISIBLE);
+        button3.setVisibility(View.VISIBLE);
+        sumTextView.setVisibility(View.VISIBLE);
         score=0;
         numberOfQuestion=0;
-        timerTextView.setText("30s");
+        timerTextView.setText("5s");
         scoreTextView.setText(Integer.toString(score)+"/"+Integer.toString(numberOfQuestion));
         newQuestion();
         playAgainButton.setVisibility(View.INVISIBLE);
         resultTextView.setText("");
 
-        new CountDownTimer(30100,1000){
+        new CountDownTimer(20100,1000){
 
             @Override
             public void onTick(long l) {
@@ -58,8 +67,16 @@ public class BrainGameFragment extends Fragment {
 
             @Override
             public void onFinish() {
-                resultTextView.setText("DONE");
+                resultTextView.setText("You scored " + score + " points!");
+                sumTextView.setVisibility(View.INVISIBLE);
+                button0.setVisibility(View.INVISIBLE);
+                button1.setVisibility(View.INVISIBLE);
+                button2.setVisibility(View.INVISIBLE);
+                button3.setVisibility(View.INVISIBLE);
                 playAgainButton.setVisibility(View.VISIBLE);
+
+                FirestoreService firestoreInstance = new FirestoreService();
+                firestoreInstance.addPoints(score);
             }
         }.start();
     }
@@ -76,8 +93,9 @@ public class BrainGameFragment extends Fragment {
         newQuestion();
     }
 
-    public void startClicked(View view){
-    brainGameGoButton.setVisibility(View.INVISIBLE);
+    public void startClicked(View view) {
+        brainGameGoButton.setVisibility(View.INVISIBLE);
+        nameBrainGame.setVisibility(View.INVISIBLE);
         gameLayout.setVisibility(View.VISIBLE);
         playAgainClicked(getView().findViewById(R.id.timerTextView));
 
@@ -138,6 +156,7 @@ public class BrainGameFragment extends Fragment {
         playAgainButton = getView().findViewById(R.id.playAgainButton);
         gameLayout = getView().findViewById(R.id.gameLayout);
         brainGameGoButton = getView().findViewById(R.id.brainGameGoButton);
+        nameBrainGame = getView().findViewById(R.id.nameBrainGame);
 
         button0.setOnClickListener(this::chooseAnswer);
         button1.setOnClickListener(this::chooseAnswer);
@@ -147,8 +166,8 @@ public class BrainGameFragment extends Fragment {
         brainGameGoButton.setOnClickListener(this::startClicked);
         playAgainButton.setOnClickListener(this::playAgainClicked);
 
-
         brainGameGoButton.setVisibility(View.VISIBLE);
+        nameBrainGame.setVisibility(View.VISIBLE);
         gameLayout.setVisibility(View.INVISIBLE);
 
     }

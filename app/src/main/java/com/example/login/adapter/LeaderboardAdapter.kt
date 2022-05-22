@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.login.R
 import com.example.login.ChatActivity
 import com.example.login.ProfileActivity
+import com.example.login.firebase.FirestoreService
 import com.example.login.model.User
 import com.google.android.material.internal.ContextUtils.getActivity
 import de.hdodenhof.circleimageview.CircleImageView
@@ -21,8 +22,6 @@ import kotlinx.android.synthetic.main.item_leaderboard_user.view.*
 
 class LeaderboardAdapter(private val context: Context, private val userList: ArrayList<User>) :
     RecyclerView.Adapter<LeaderboardAdapter.ViewHolder>() {
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_leaderboard_user, parent, false)
@@ -35,16 +34,17 @@ class LeaderboardAdapter(private val context: Context, private val userList: Arr
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val user = userList[position]
+        holder.txtUserRank.text = (position + 1).toString()
         holder.txtUserName.text = user.userName
         Glide.with(context).load(user.profileImage).placeholder(R.drawable.profile_image).into(holder.imgUser)
         holder.txtUserPoints.text = user.userPoints.toString()
 
         holder.layoutUser.userImage.setOnClickListener {
             val intent = Intent(
-                ,
+                context,
                 ProfileActivity::class.java
             )
-            startActivity(intent)
+            context.startActivity(intent)
         }
 
         holder.layoutUser.userName.setOnClickListener {
@@ -57,6 +57,7 @@ class LeaderboardAdapter(private val context: Context, private val userList: Arr
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        val txtUserRank:TextView = view.findViewById(R.id.userRank)
         val txtUserName:TextView = view.findViewById(R.id.userName)
         val txtUserPoints:TextView = view.findViewById(R.id.userPoints)
         val imgUser:CircleImageView = view.findViewById(R.id.userImage)
