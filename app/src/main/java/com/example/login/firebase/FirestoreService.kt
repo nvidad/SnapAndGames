@@ -14,24 +14,7 @@ class FirestoreService {
     private var uid: String? = user?.uid
     val db = FirebaseFirestore.getInstance()
     private val docRef = db.collection("users").document(uid!!)
-    private var userPoints:Long = 0
 
-    init {
-        if (uid != null) {
-            docRef.get()
-                .addOnSuccessListener { document ->
-                    if (document != null) {
-                        Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                        userPoints = document.get("points") as Long
-                    } else {
-                        Log.d(TAG, "No such document")
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    Log.d(TAG, "get failed with ", exception)
-                }
-        }
-    }
 
 //    fun getPoints(uid:String): Long {
 //        val docRef =  db.collection("users").document(uid)
@@ -55,8 +38,23 @@ class FirestoreService {
 //    }
 
     fun addPoints(newPoints:Int) {
-        val newScore:Long = userPoints + newPoints
-        docRef.set(hashMapOf("points" to newScore))
+        if (uid != null) {
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if (document != null && document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                        val oldPoints = document.get("points") as Long
+                        val newScore:Long = oldPoints + newPoints
+                        docRef.set(hashMapOf("points" to newScore))
+                    } else {
+                        Log.d(TAG, "No such document")
+                        docRef.set(hashMapOf("points" to newPoints))
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(TAG, "get failed with ", exception)
+                }
+        }
     }
 
 }

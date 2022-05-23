@@ -48,7 +48,7 @@ class MemoryGameFragment : Fragment() {
 
             // Callback function, fired on regular interval
             override fun onTick(millisUntilFinished: Long) {
-                time.text = "Seconds left:"+ millisUntilFinished / 1000
+                time.text = (millisUntilFinished / 1000).toString() + "s"
                 if (flipped) { time.text = "You Won" }
             }
 

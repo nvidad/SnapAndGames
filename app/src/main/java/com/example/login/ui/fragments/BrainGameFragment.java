@@ -36,8 +36,6 @@ public class BrainGameFragment extends Fragment {
     Button playAgainButton;
     ConstraintLayout gameLayout;
 
-
-
     public BrainGameFragment() {
 
     }
@@ -77,6 +75,7 @@ public class BrainGameFragment extends Fragment {
 
                 FirestoreService firestoreInstance = new FirestoreService();
                 firestoreInstance.addPoints(score);
+
             }
         }.start();
     }

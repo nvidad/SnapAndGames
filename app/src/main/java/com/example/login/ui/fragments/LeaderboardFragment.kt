@@ -23,13 +23,17 @@ import com.example.login.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.android.synthetic.main.activity_chat1.imgProfile
 import kotlinx.android.synthetic.main.activity_users.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class LeaderboardFragment : Fragment() {
+
+    val TAG = "LeaderboardFragment"
 
     var userList = ArrayList<User>()
 
@@ -72,26 +76,38 @@ class LeaderboardFragment : Fragment() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
-
+                val db = FirebaseFirestore.getInstance()
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val user = dataSnapShot.getValue(User::class.java)
 
                     if (user != null) {
-//                        user.userPoints = firestoreInstance.getPoints(user.userId)
+                        val docRef = db.collection("users").document(user.userId)
+                        docRef.get()
+                            .addOnSuccessListener { document ->
+                                if (document != null && document.exists()) {
+                                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                                    user.userPoints = document.get("points") as Long
+                                } else {
+                                    Log.d(TAG, "No such document")
+                                    user.userPoints = 0
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.d(TAG, "get failed with ", exception)
+                            }
                         userList.add(user)
                     }
                 }
 
+                val sortedList = userList.sortedWith(compareBy { it.userPoints }).reversed()
 
-                userList.sortBy { it.userPoints }
-
-
-                val leaderboardAdapter = LeaderboardAdapter(requireContext(), userList)
-
+                val newList = ArrayList<User>(sortedList)
+                val leaderboardAdapter = LeaderboardAdapter(requireContext(),
+                    newList
+                )
                 userRecyclerView.adapter = leaderboardAdapter
             }
-
         })
     }
 
